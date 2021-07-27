@@ -10,7 +10,11 @@ module.exports = {
       red: '#EA8282',
       white: '#FFFFFF',
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        flag: '0 4px 24px rgba(0, 0, 0, 0.1)',
+      },
+    },
   },
   variants: {
     extend: {},

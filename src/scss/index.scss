@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: url('../assets/background.png') center center no-repeat;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+}
