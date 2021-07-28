@@ -1,11 +1,11 @@
 import WinnersImage from '../assets/winners.svg';
 
 const Results = ({ score, onRetryClicked }) => (
-  <div className="flex flex-col items-center text-center gap-16 bg-white p-8 rounded-3xl relative">
+  <div className="flex flex-col items-center text-center gap-16 bg-white p-8 rounded-3xl">
     <img src={WinnersImage} alt="" className="w-60" />
     <div>
       <p className="text-5xl font-bold text-navy mb-4">Results</p>
-      <p className="text-lg text-navy">
+      <p className="text-lg text-navy font-medium">
         You got <span className="text-4xl font-bold text-green">{score}</span>{' '}
         correct answers
       </p>

@@ -1,11 +1,12 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Countries from '../data/countries.json';
 import useQuestion from '../hooks/useQuestion';
+import Loading from './Loading';
 import Question from './Question';
 import Results from './Results';
 
 const Quiz = () => {
-  const [countries, setCountries] = useState(Countries);
+  const [countries, setCountries] = useState(null);
   const [question, nextQuestion] = useQuestion(countries);
   const [finished, setFinished] = useState(false);
   const score = useRef(0);
@@ -14,7 +15,7 @@ const Quiz = () => {
     setCountries(Countries);
   }, []);
 
-  if (!question) return <div>Loading...</div>;
+  if (!question) return <Loading />;
 
   if (finished)
     return (
