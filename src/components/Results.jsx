@@ -1,7 +1,7 @@
 import WinnersImage from '../assets/winners.svg';
 
 const Results = ({ score, onRetryClicked }) => (
-  <div className="flex flex-col items-center text-center gap-16 bg-white p-8 rounded-3xl">
+  <div className="flex flex-col items-center text-center gap-16 bg-white px-8 py-16 rounded-3xl">
     <img src={WinnersImage} alt="" className="w-60" />
     <div>
       <p className="text-5xl font-bold text-navy mb-4">Results</p>

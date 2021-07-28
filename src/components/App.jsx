@@ -1,13 +1,18 @@
+import Footer from './Footer';
 import Quiz from './Quiz';
 
 const App = () => (
-  <div>
-    <div className="max-w-md mx-auto pt-32">
+  <div className="h-full">
+    <div
+      className="max-w-md mx-auto"
+      style={{ paddingTop: 'calc((100vh - 48rem) / 2)' }}
+    >
       <header className="text-4xl font-bold uppercase text-white mb-6">
         Country Quiz
       </header>
       <Quiz />
     </div>
+    <Footer />
   </div>
 );
 

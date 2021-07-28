@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 html,
-body {
+body,
+#root {
   height: 100%;
 }
 
 body {
-  background: url('../assets/background.png') center center no-repeat;
+  background: url('../assets/background.png') center center no-repeat fixed;
   background-size: cover;
   font-family: 'Poppins', sans-serif;
 }
