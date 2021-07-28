@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import Countries from '../data/countries.json';
 import useQuestion from '../hooks/useQuestion';
 import Loading from './Loading';
 import Question from './Question';
@@ -12,7 +11,13 @@ const Quiz = () => {
   const score = useRef(0);
 
   useEffect(() => {
-    setCountries(Countries);
+    const fetchCountries = async () => {
+      const response = await fetch('https://restcountries.eu/rest/v2/all');
+      const data = await response.json();
+      setCountries(data);
+    };
+
+    fetchCountries();
   }, []);
 
   if (!question) return <Loading />;
