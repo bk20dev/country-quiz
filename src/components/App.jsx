@@ -1,6 +1,4 @@
-import Question from './Question';
-
-const answers = ['Vietnam', 'Malaysia', 'Sweden', 'Austria'];
+import Quiz from './Quiz';
 
 const App = () => (
   <div>
@@ -8,12 +6,7 @@ const App = () => (
       <header className="text-4xl font-bold uppercase text-white mb-6">
         Country Quiz
       </header>
-      <Question
-        title="Kuala Lumpur is the capital of"
-        answers={answers}
-        correct={1}
-        onNextClicked={console.log}
-      />
+      <Quiz />
     </div>
   </div>
 );
