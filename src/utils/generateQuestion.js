@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 export const generateCapitalQuestion = (countries) => {
   countries = countries.filter((country) => country.capital);
@@ -9,7 +9,7 @@ export const generateCapitalQuestion = (countries) => {
   return {
     id: Date.now(),
     title: `${answers[correct].capital} is the capital of`,
-    answers: answers.map((country) => country.name),
+    answers: answers.map((country) => country.name.common),
     correct,
   };
 };
@@ -20,9 +20,9 @@ export const generateFlagQuestion = (countries) => {
 
   return {
     id: Date.now(),
-    title: 'Which country this flag belongs to?',
-    flag: answers[correct].flag,
-    answers: answers.map((country) => country.name),
+    title: "Which country this flag belongs to?",
+    flag: answers[correct].flags.svg,
+    answers: answers.map((country) => country.name.common),
     correct,
   };
 };

@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
-import useQuestion from '../hooks/useQuestion';
-import Loading from './Loading';
-import Question from './Question';
-import Results from './Results';
+import { useEffect, useRef, useState } from "react";
+import useQuestion from "../hooks/useQuestion";
+import Loading from "./Loading";
+import Question from "./Question";
+import Results from "./Results";
 
 const Quiz = () => {
   const [countries, setCountries] = useState(null);
@@ -12,12 +12,13 @@ const Quiz = () => {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      const response = await fetch('https://restcountries.eu/rest/v2/all');
-      const data = await response.json();
-      setCountries(data);
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      return await response.json();
     };
 
-    fetchCountries();
+    fetchCountries()
+      .then((countries) => setCountries(countries))
+      .catch(console.warn);
   }, []);
 
   if (!question) return <Loading />;

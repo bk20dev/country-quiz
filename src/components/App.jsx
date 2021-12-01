@@ -7,7 +7,7 @@ const App = () => (
       className="max-w-md mx-auto"
       style={{ paddingTop: 'calc((100vh - 48rem) / 2)' }}
     >
-      <header className="text-4xl font-bold uppercase text-white mb-6">
+      <header className="text-4xl font-bold uppercase text-white my-6">
         Country Quiz
       </header>
       <Quiz />

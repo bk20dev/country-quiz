@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import AdventureImage from '../assets/adventure.svg';
-import Guess from './Guess';
+import { useState } from "react";
+import AdventureImage from "../assets/adventure.svg";
+import Guess from "./Guess";
 
-const alphabet = ['A', 'B', 'C', 'D'];
+const alphabet = ["A", "B", "C", "D"];
 
 const Question = ({ title, flag = null, answers, correct, onNextClicked }) => {
   const [choice, setChoice] = useState(null);
 
   const getState = (i, choice, correct) => {
-    if (i === correct) return 'correct';
-    if (i === choice) return 'incorrect';
-    return 'default';
+    if (i === correct) return "correct";
+    if (i === choice) return "incorrect";
+    return "default";
   };
 
   const renderGuesses = () =>
@@ -39,7 +39,13 @@ const Question = ({ title, flag = null, answers, correct, onNextClicked }) => {
         className="w-40 absolute right-0 -top-20"
       />
 
-      {flag && <img src={flag} alt="A flag" className="h-14 rounded mb-7 shadow-flag" />}
+      {flag && (
+        <img
+          src={flag}
+          alt="A flag"
+          className="h-14 rounded mb-7 shadow-flag"
+        />
+      )}
       <p className="text-2xl font-bold text-navy mb-8">{title}</p>
       <div className="flex flex-col gap-6">{renderGuesses()}</div>
 
